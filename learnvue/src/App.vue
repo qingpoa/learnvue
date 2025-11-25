@@ -1,11 +1,23 @@
 <template>
   <div class = "content">
-    <Person/>
+    <Person :list="list"/>
   </div>
 </template>
 
 <script lang="ts" setup name="App">
-  import Person from './components/person.vue'
+  import { reactive } from 'vue';
+import Person from './components/person.vue'
+import type { Persons } from './types';
+  let list = reactive<Persons>([{
+    name:"张三",
+    age:18,
+    id:1
+  },
+  {
+    name:"李四",
+    age:18,
+    id:2
+  }])
 </script>
 
 <style scoped>

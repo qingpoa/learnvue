@@ -1,8 +1,7 @@
 <template>
   <div class="Person">
-    <h2>{{ zhangsan.name }}</h2>
     <ul>
-      <li v-for="item in personss" :key = "item.id">姓名：{{ item.name }}-年龄：{{ item.age }}</li>
+      <li v-for="item in a.list" :key = "item.id">姓名：{{ item.name }}-年龄：{{ item.age }}</li>
     </ul>
   </div>
 </template>
@@ -11,39 +10,7 @@
 <script setup lang = 'ts' name="Person">
   import { ref , computed, watch, reactive, watchEffect} from 'vue'
   import { type person, type Persons }  from "../types"
-
-  // let zhangsan:perosn = reactive({
-  //   name: "张三",
-  //   age: 18,
-  //   id: 1
-  // })
-
-  let zhangsan = reactive<person>({
-    name: "张三",
-    age: 18,
-    id: 1
-  })
-
-  let personss = reactive<Persons>(
-    [
-      {
-        name: "张三",
-        age: 18,
-        id: 1
-      },
-      {
-        name: "李四",
-        age: 18,
-        id: 2
-      },
-      {
-        name: "王五",
-        age: 18,
-        id: 3
-      }
-    ]
-  )
-  zhangsan.name = "zhang-三"
+  let a = defineProps<{list?:Persons}>()
 </script>
 
 
