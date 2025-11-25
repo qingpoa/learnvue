@@ -1,13 +1,12 @@
-<script lang="ts" setup name="App">
-  import Person from './components/person.vue'
-
-</script>
 <template>
   <div class = "content">
-    <h1>hello</h1>
     <Person/>
   </div>
 </template>
+
+<script lang="ts" setup name="App">
+  import Person from './components/person.vue'
+</script>
 
 <style scoped>
 
