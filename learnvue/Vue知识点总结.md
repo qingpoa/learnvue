@@ -1,3 +1,12 @@
+# 创建vue
+
+  npm create vue@latest
+  
+  cd <your-project-name>
+  npm install
+  npm run dev
+
+
 # Vue.js 重点知识点总结
 
 ## 1. Vue 3 简介
