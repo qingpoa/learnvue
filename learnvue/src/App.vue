@@ -1,6 +1,6 @@
 <template>
   <div class = "content">
-    <Person v-if = "isshow"/>
+    <Person/>
   </div>
 </template>
 
@@ -8,7 +8,6 @@
   import { reactive,ref } from 'vue';
   import Person from './components/person.vue'
   import type { Persons } from './types';
-  let isshow = ref(true)
 </script>
 
 <style scoped>
