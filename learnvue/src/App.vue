@@ -1,6 +1,6 @@
 <template>
   <div class = "content">
-    <Person/>
+    <countertime/>
   </div>
 </template>
 
@@ -8,6 +8,7 @@
   import { reactive,ref } from 'vue';
   import Person from './components/person.vue'
   import type { Persons } from './types';
+  import countertime from './components/countertime.vue';
 </script>
 
 <style scoped>
