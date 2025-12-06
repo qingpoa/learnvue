@@ -3,19 +3,20 @@
     <h1 class="title">vue 路由</h1>
     <!-- 导航区 -->
      <div class = "nav">
-      <a href="#" class="active">首页</a>
-      <a href="#">新闻</a>
-      <a href="#">关于</a>
+      <RouterLink to="/home" active-class="active">首页</RouterLink>
+      <RouterLink to="/news" active-class="active">新闻</RouterLink>
+      <RouterLink to="/about" active-class="active">关于</RouterLink>
 
      </div>
     <!-- 展示区 -->
     <div class = "content">
-      <p>展示区</p>
+      <RouterView></RouterView>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup name="App">
+  import { RouterView ,RouterLink} from 'vue-router';
 
 </script>
 
@@ -33,14 +34,12 @@
 }
 .nav {
   text-align: center;
-  font-size: 2rem;
   height: 50px;
-  box-shadow: 0 0 10px;
-  border-radius: 10px;
   padding: 2px;
 }
 .nav a {
   margin: 0 100px;
+  font-size: 2rem;
   text-decoration: none;
   color: rgb(0, 0, 0);
   border: 1px solid #38eb83c9;
@@ -59,7 +58,7 @@
 
 .content {
   margin-top: 20px;
-  height: 300px;
+  min-height: 300px;
   border: 1px solid;
   font-size: 2rem;
   border-radius: 10px;
