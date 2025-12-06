@@ -1,9 +1,9 @@
 //引入路由
 import { createRouter ,createWebHistory} from "vue-router";
 //引入组件
-import home from "@/components/home.vue";
-import news from "@/components/news.vue";
-import about from "@/components/about.vue";
+import home from "@/pages/home.vue";
+import news from "@/pages/news.vue";
+import about from "@/pages/about.vue";
 //创建路由器
 
 const router = createRouter(
@@ -15,6 +15,7 @@ const router = createRouter(
                 component:home
             },
             {
+                name:"xinwen",
                 path:"/news",
                 component:news
             },
