@@ -21,6 +21,11 @@
             },10)
             isrunning = true
         }
+
+        else{
+            pause()
+        }
+        
     }
 
     function pause(){
