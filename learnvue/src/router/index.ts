@@ -4,6 +4,7 @@ import { createRouter ,createWebHistory} from "vue-router";
 import home from "@/pages/home.vue";
 import news from "@/pages/news.vue";
 import about from "@/pages/about.vue";
+import detail from "@/pages/detail.vue";
 //创建路由器
 
 const router = createRouter(
@@ -17,7 +18,14 @@ const router = createRouter(
             {
                 name:"xinwen",
                 path:"/news",
-                component:news
+                component:news,
+                //嵌套路由
+                children:[
+                    {
+                        path:"detail",
+                        component:detail
+                    }
+                ]
             },
             {
                 path:"/about",
