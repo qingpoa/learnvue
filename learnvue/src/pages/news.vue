@@ -2,7 +2,17 @@
   <div class="news">
     <ul>
       <li v-for="news in newsList" :key="news.id">
-        <RouterLink to="/news/detail">{{ news.title }}</RouterLink>
+        <RouterLink 
+        :to="{
+          path:'/news/detail',
+          query:{
+            id:news.id,
+            title:news.title,
+            content:news.content
+          }
+        }">
+        {{ news.title }}
+      </RouterLink>
       </li>
     </ul>
     <div class="news-content">
