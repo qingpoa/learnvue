@@ -22,7 +22,8 @@ const router = createRouter(
                 //嵌套路由
                 children:[
                     {
-                        path:"detail",
+                        name:"det",
+                        path:"detail/:id/:title/:content",
                         component:detail
                     }
                 ]

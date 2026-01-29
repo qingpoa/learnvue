@@ -4,8 +4,8 @@
       <li v-for="news in newsList" :key="news.id">
         <RouterLink 
         :to="{
-          path:'/news/detail',
-          query:{
+          name:'det',
+          params:{
             id:news.id,
             title:news.title,
             content:news.content
