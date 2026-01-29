@@ -23,8 +23,15 @@ const router = createRouter(
                 children:[
                     {
                         name:"det",
-                        path:"detail/:id/:title/:content",
-                        component:detail
+                        path:"detail",
+                        component:detail,
+                        //第一种方式
+                        //props:true
+                        //第二种方式
+                        props(route){
+                            //return route.query
+                            return route.query
+                        }
                     }
                 ]
             },
