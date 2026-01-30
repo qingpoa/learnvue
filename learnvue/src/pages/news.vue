@@ -2,6 +2,7 @@
   <div class="news">
     <ul>
       <li v-for="news in newsList" :key="news.id">
+        <button @click = showdetial(news)>显示新闻</button>
         <RouterLink 
         :to="{
           name:'det',
@@ -24,13 +25,33 @@
 
 <script setup lang="ts" name="News">
   import { reactive } from 'vue';
-  import { RouterView ,RouterLink} from 'vue-router';
+  import { RouterView ,RouterLink,useRouter} from 'vue-router';
   const newsList = reactive([
     {id:'asfdtrfay01',title:'很好的抗癌食物',content:'西蓝花'},
     {id:'asfdtrfay02',title:'如何一夜暴富',content:'学IT'},
     {id:'asfdtrfay03',title:'震惊，万万没想到',content:'明天是周一'},
     {id:'asfdtrfay04',title:'好消息！好消息！',content:'快过年了'}
   ])
+
+  interface NewsList{
+    id:string,
+    title:string,
+    content:string
+  }
+
+  const router = useRouter()
+  function showdetial(news:NewsList){
+    router.push(
+      {
+        name:'det',
+          query:{
+            id:news.id,
+            title:news.title,
+            content:news.content
+          }
+      }
+    )
+  }
 </script>
 
 <style scoped>
