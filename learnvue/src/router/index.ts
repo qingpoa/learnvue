@@ -38,6 +38,10 @@ const router = createRouter(
             {
                 path:"/about",
                 component:about
+            },
+            {
+                path:"/",
+                redirect:"/home"
             }
         ]
     }
